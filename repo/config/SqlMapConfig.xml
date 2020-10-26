@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- 自定义别名 -->
+<typeAliases>
+	<!-- 批量定义别名，扫描整个包下的类， 注意：别名必须是类名（首字母大小写都可以）-->
+	<package name="cn.fbl.pojo"/>
+</typeAliases>
+</configuration>

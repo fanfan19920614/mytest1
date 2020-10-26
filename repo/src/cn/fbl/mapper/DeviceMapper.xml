@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.fbl.mapper.DeviceMapper">
+    <update id="update" parameterType="device">
+        update device set (devicename=#{devicename},price=#{price},detail=#{detail},createtime=#{createtime})
+    </update>
+    <delete id="delete">
+        delete from device where id=#{id}
+    </delete>
+
+    <select id="login" parameterType="user" resultType="cn.fbl.pojo.User">
+        select * from user where username=#{username} and password=#{password}
+    </select>
+    <select id="findAll" resultType="cn.fbl.pojo.Device">
+        select d.*,u.username from device d,user u where d.userid=u.id
+    </select>
+    <select id="toUpdate" parameterType="int" resultType="cn.fbl.pojo.Device">
+        select d.*,u.username from device d,user u where d.userid=u.id and d.id=#{id}
+    </select>
+</mapper>
